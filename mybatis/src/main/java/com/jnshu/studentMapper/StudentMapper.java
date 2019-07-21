@@ -8,7 +8,8 @@ public interface StudentMapper {
 
     public Student selectUserByID(int id);
 
-    public List<Student> selectUsersByName(String userName);
+    public Student selectUsersByName(String name);
+    public Student selectUsersById(int id);
 
     public void addUser(Student student);
 

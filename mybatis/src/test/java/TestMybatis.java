@@ -62,7 +62,22 @@ public class TestMybatis {
         try {
             StudentMapper userOperation = session.getMapper(StudentMapper.class);
             //session.getMapper()的作用.已知Mapper为映射器.
-            Student student = userOperation.selectUserByID(29);
+            Student student = userOperation.selectUserByID(30);
+            if (student != null) {
+                System.out.println(student.getId() + ":" + student.getName()
+                        + ":" + student.getMajor());
+            }
+        } finally {
+            session.close();
+        }
+    }
+    @Test
+    public void getUserByName(){
+        SqlSession session = sqlSessionFactory.openSession();
+        try {
+            StudentMapper userOperation = session.getMapper(StudentMapper.class);
+            //session.getMapper()的作用.已知Mapper为映射器.
+            Student student = userOperation.selectUsersByName("test_add");
             if (student != null) {
                 System.out.println(student.getId() + ":" + student.getName()
                         + ":" + student.getMajor());
