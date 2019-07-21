@@ -11,7 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class testjunit {
-
         ApplicationContext context =
                 new ClassPathXmlApplicationContext
                         ("applicationContext.xml");
@@ -21,12 +20,13 @@ public class testjunit {
     @Test
     public void insert(){
         Student student = new Student("chen","python",2019,
-                "hbpu",6026,"#","#","wang",1,1);
-        studentDaoImpl.insert(student);
+                "hbpu",6024,"#","#","wang",1,1);
+        studentDaoImpl.insertReturnId(student);
     }
+
     @Test
     public void update(){
-        studentDaoImpl.update("chen","wqis");
+        studentDaoImpl.update("chen","wq666");
     }
     @Test
     public void query(){
